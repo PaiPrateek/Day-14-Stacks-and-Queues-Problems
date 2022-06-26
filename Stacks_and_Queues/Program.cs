@@ -9,10 +9,29 @@ namespace Stacks_and_Queues
             Console.WriteLine("Creating Queue");
             Queue queue = new Queue(3);
 
-            //Adding Elemt into Queue
+            //Adding Element into Queue
             queue.Enqueue(56);
             queue.Enqueue(30);
             queue.Enqueue(70);
+            Console.WriteLine("\n");
+
+            //Removing the Element from Queue
+            var TC1 = queue.Dequeue();
+            Console.WriteLine("Dequeue : " + TC1);
+            Console.WriteLine("\n");
+
+            var TC2 = queue.Dequeue();
+            Console.WriteLine("Dequeue : " + TC2);
+            Console.WriteLine("\n");
+
+            var TC3 = queue.Dequeue();
+            Console.WriteLine("Dequeue : " + TC3);
+            Console.WriteLine("\n");
+
+            var TC4 = queue.Dequeue();
+            Console.WriteLine("Dequeue : " + TC4);
+            Console.WriteLine("\n");
+
 
 
 
@@ -136,6 +155,19 @@ namespace Stacks_and_Queues
                 obj[++rear] = data;
                 Console.WriteLine(data);
                 return true;
+            }
+            // Creating Denqueue method to Remove the element from the Queue
+            public int Dequeue()
+            {
+                if (front == -1)
+                {
+                    Console.WriteLine("queue is empty");
+                    return default(int);
+                }
+                int ob = obj[front++];
+                if (front > rear)
+                    front = rear = -1;
+                return ob;
             }
         }
 
